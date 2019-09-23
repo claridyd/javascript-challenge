@@ -27,9 +27,11 @@ button.on("click", function() {
 
     var filteredData = ufo_data.filter(ufo_data => ufo_data.datetime === inputValue);
     console.log(filteredData);
+    
+    //clear table prior to filter
     tbody.html("");
+
     filteredData.forEach((data) => {
-        
         var row = tbody.append('tr');
         Object.entries(data).forEach(([key,value]) => {
             var cell = row.append('td');
